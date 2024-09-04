@@ -6,6 +6,10 @@ import br.com.dio.desafio.dominio.Mentoria;
 import java.time.LocalDate;
 
 public class Main {
+
+    public static final String ANSI_RESET = "\u001B[0m"; // constante faz com que a cor do texto volte ao normal
+    public static final String ANSI_RED = "\u001B[31m"; // constante para mudar a cor do texto que será exibido
+
     public static void main(String[] args) {
         Curso curso1 = new Curso();
         curso1.setTitulo("curso java");
@@ -22,10 +26,6 @@ public class Main {
         mentoria.setDescricao("descrição mentoria java");
         mentoria.setData(LocalDate.now());
 
-        /*System.out.println(curso1);
-        System.out.println(curso2);
-        System.out.println(mentoria);*/
-
         Bootcamp bootcamp = new Bootcamp();
         bootcamp.setNome("Bootcamp Java Developer");
         bootcamp.setDescricao("Descrição Bootcamp Java Developer");
@@ -33,30 +33,30 @@ public class Main {
         bootcamp.getConteudos().add(curso2);
         bootcamp.getConteudos().add(mentoria);
 
-        Dev devCamila = new Dev();
-        devCamila.setNome("Camila");
-        devCamila.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
-        devCamila.progredir();
-        devCamila.progredir();
+        Dev devGelson = new Dev();
+        devGelson.setNome("Gelson");
+        devGelson.inscreverBootcamp(bootcamp);
+        System.out.println(ANSI_RED + "Conteúdos Inscritos Gelson: " + ANSI_RESET + devGelson.getConteudosInscritos());
+        devGelson.progredir();
+        devGelson.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos Camila:" + devCamila.getConteudosInscritos());
-        System.out.println("Conteúdos Concluídos Camila:" + devCamila.getConteudosConcluidos());
-        System.out.println("XP:" + devCamila.calcularTotalXp());
+        System.out.println(ANSI_RED + "Conteúdos Inscritos Gelson: " + ANSI_RESET + devGelson.getConteudosInscritos());
+        System.out.println(ANSI_RED + "Conteúdos Concluídos Gelson: " + ANSI_RESET + devGelson.getConteudosConcluidos());
+        System.out.println("XP:" + devGelson.calcularTotalXp());
 
-        System.out.println("-------");
+        System.out.println(ANSI_RED + "--------------------------------" + ANSI_RESET);
 
-        Dev devJoao = new Dev();
-        devJoao.setNome("Joao");
-        devJoao.inscreverBootcamp(bootcamp);
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        devJoao.progredir();
-        devJoao.progredir();
-        devJoao.progredir();
+        Dev devIara = new Dev();
+        devIara.setNome("Iara");
+        devIara.inscreverBootcamp(bootcamp);
+        System.out.println(ANSI_RED + "Conteúdos Inscritos Iara: " + ANSI_RESET + devIara.getConteudosInscritos());
+        devIara.progredir();
+        devIara.progredir();
+        devIara.progredir();
         System.out.println("-");
-        System.out.println("Conteúdos Inscritos João:" + devJoao.getConteudosInscritos());
-        System.out.println("Conteúdos Concluidos João:" + devJoao.getConteudosConcluidos());
-        System.out.println("XP:" + devJoao.calcularTotalXp());
+        System.out.println(ANSI_RED + "Conteúdos Inscritos Iara: " + ANSI_RESET + devIara.getConteudosInscritos());
+        System.out.println(ANSI_RED + "Conteúdos Concluidos Iara: " + ANSI_RESET + devIara.getConteudosConcluidos());
+        System.out.println("XP:" + devIara.calcularTotalXp());
 
     }
 
